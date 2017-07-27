@@ -1,0 +1,39 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Handlebars.js Tutorial</title>
+</head>
+<body>
+
+  <h1>List of Animals and Sounds</h1>
+  <div id="animalList">
+  </div>
+
+  <!-- HANDLEBARS TEMPLATE -->
+  <script id="animalTemplate" type="text/x-handlebars-template">
+    {{#if animals}}
+    <ul>
+      {{#each animals}}
+        <li class="animal">{{type}} says {{sound}}</li>
+      {{/each}}
+    </ul>
+    {{else}}
+      <p>No animals here.</p>
+    {{/if}}
+
+    <p>{{helper}}</p>
+    <p>{{multiply 10 3}}</p>
+  </script>
+ <!--In the above code use {{#each animals}}..{{/each}} or {{#animals}}...{{/animals}}, both works the same way-->
+
+
+  <!-- REQUIRE HANDLEBARS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js"></script>
+  
+  <script src="js/helper.js"></script>
+  <!-- RENDER TEMPLATE AFTER EVERYTHING ELSE LOADED -->
+  <script src="js/animalList.js"></script>
+
+</body>
+</html>
